@@ -137,6 +137,15 @@ config WPM_FAST
 config WPM_SUPER_FAST
     int "WPM super fast"
     default 90
+
+config CPI_VALUE
+    int "Fallback CPI value shown by the CPI status widget"
+    range 0 9999
+    default 1600
+    help
+      Sets the value displayed when no zmk,behavior-sensor-attr-cycle node is
+      available. When that behavior is configured, the widget follows its
+      selected value dynamically instead.
     
 config USE_COMPLETE_CUSTOM_THEME
     bool "Complete custom theme"
@@ -373,4 +382,3 @@ config WPM_FONT_1_COLOR
 config WPM_FONT_BG_COLOR
     string ""
     default "212121"
-

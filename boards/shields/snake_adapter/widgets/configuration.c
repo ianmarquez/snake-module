@@ -30,6 +30,9 @@ SlotName get_slot_name_from_var(char *slot_name) {
     if (strcmp(slot_name, "wpm") == 0) {
         return SLOT_NAME_WPM;
     }
+    if (strcmp(slot_name, "cpi") == 0) {
+        return SLOT_NAME_CPI;
+    }
     return SLOT_NAME_NONE;
 }
 

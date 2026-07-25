@@ -24,6 +24,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include "helpers/settings.h"
 #include "theme.h"
 #include "wpm.h"
+#include "cpi.h"
 #include "logo.h"
 #include <stdint.h>
 
@@ -111,6 +112,7 @@ void print_menu() {
     start_battery_status();
     start_output_status();
     start_wpm_status();
+    start_cpi_status();
     start_modifier_status();
     start_layer_status();
     set_status_symbol();
@@ -119,6 +121,7 @@ void print_menu() {
     print_layer();
     print_themes();
     print_wpm();
+    print_cpi();
     print_modifiers();
 }
 
@@ -130,6 +133,7 @@ void toggle_menu() {
     #endif
     if (menu_on) {
         stop_wpm_status();
+        stop_cpi_status();
         stop_modifier_status();
         stop_output_status();
         stop_battery_status();

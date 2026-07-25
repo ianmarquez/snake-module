@@ -14,6 +14,7 @@
 #include "widgets/logo.h"
 #include "widgets/configuration.h"
 #include "widgets/wpm.h"
+#include "widgets/cpi.h"
 #include "widgets/modifier.h"
 
 #include <zephyr/logging/log.h>
@@ -74,6 +75,7 @@ lv_obj_t* zmk_display_status_screen() {
     zmk_widget_layer_init();
     zmk_widget_action_button_init();
     zmk_widget_wpm_init();
+    zmk_widget_cpi_init();
     zmk_widget_modifier_init();
 
     lv_timer_create(timer_splash, SPLASH_DURATION, NULL);
