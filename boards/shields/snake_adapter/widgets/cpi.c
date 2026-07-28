@@ -106,9 +106,14 @@ void print_cpi(void) {
                          previous_length, previous_length);
     }
 
+    const uint8_t prefix_length = 4;
     print_char_array(scaled_bitmap_cpi_font, label, x, cpi_y, cpi_font_scale,
                      get_wpm_font_color(), get_wpm_font_bg_color(), FONT_SIZE_3x5,
-                     gap, label_length, label_length);
+                     gap, prefix_length, prefix_length);
+    print_char_array(scaled_bitmap_cpi_font, label + prefix_length,
+                     x + (character_width * prefix_length), cpi_y, cpi_font_scale,
+                     get_wpm_font_1_color(), get_wpm_font_bg_color(), FONT_SIZE_3x5,
+                     gap, label_length - prefix_length, label_length - prefix_length);
     last_rendered_cpi = cpi;
     strcpy(last_rendered_label, label);
     last_rendered_x = x;
